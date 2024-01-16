@@ -1,0 +1,32 @@
+class Solution {
+  public:
+    int sumOfRowCol(int N, int M, vector<vector<int>> A) {
+        // code here
+        int sumr[min(N,M)];
+        int sumro=0;
+        for(int i=0;i<min(N,M);i++){
+            for(int j=0;j<M;j++){
+                sumro+=A[i][j];
+            }sumr[i]=sumro;
+            sumro=0;
+        }
+        int sumc[min(N,M)];
+    for(int i=0;i<min(N,M);i++){
+            for(int j=0;j<N;j++){
+                sumro+=A[j][i];
+            }sumc[i]=sumro;
+            sumro=0;
+        }
+        bool flag ;
+        for(int i=0;i<min(M,N);i++){
+            if(sumr[i]==sumc[i]){
+                flag=1;
+            }
+            else flag=0;
+        }
+        if(flag){
+            return 1;
+        }
+        else return 0;
+    }
+};
