@@ -1,0 +1,20 @@
+
+#include <iostream>
+
+using namespace std;
+bool issorted(int arr[],int size){
+    if(size==0||size==1)return true;
+    if(arr[0]>arr[1]) return false;
+    else return issorted(arr+1,size-1);
+}
+int main()
+{
+    
+    int size=6;
+    int arr[size]={2,4,6,120,11,13};
+    int ans =issorted(arr,size);
+    if(ans) cout<<"The given array is sorted";
+    else cout<<"The given array is not sorted";
+
+    return 0;
+}
