@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+bool linearsearch(int *arr, int size,int key){
+    if(size==0){
+        return false;
+    }
+    else if(arr[0]==key){
+        return true;
+    }
+    else return linearsearch(arr+1,size-1,key);
+    
+}
+int main()
+{
+    
+    int size=8;
+    int key;
+    cin>>key;
+    int arr[]={1,4,6,8,9,12,5,234};
+    bool ans = linearsearch(arr,size,key);
+    if(ans){
+        cout<<"The element is found ";
+    }
+    else cout<<"The element is not found ";
+    return 0;
+}
